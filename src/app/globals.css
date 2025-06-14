@@ -59,8 +59,8 @@ body {
   transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s, background 0.25s;
   background: transparent;
 }
-.layout-thumbnail:hover,
-.group:hover .layout-thumbnail {
+.layout-thumbnail:hover
+ {
   transform: scale(1.2);
   /* background: radial-gradient(circle, rgba(27, 25, 24, 0.543) 0%, rgba(27, 25, 24, 0.198) 30%, rgba(27,25,24,0.00) 100%);
   box-shadow: 0 8px 32px 0 rgba(55,50,46,0.18); */
