@@ -1,9 +1,11 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  --background: #130f0c;
+    --foreground: #BD9882;
 }
+
+
 
 @theme inline {
   --color-background: var(--background);
@@ -11,12 +13,18 @@
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
+@theme {
+  --color-primary: #BD9882;
+  --color-secondary: #130f0c;
+  --font-duplicate-sans: var(--font-duplicate-sans);
+}
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@font-face {
+  font-family: DuplicateSans;
+  font-style: normal;
+  font-weight: 200 700;
+  font-display: swap;
+  src: url("/fonts/DuplicateSans-Bold.woff2") format("woff2");
 }
 
 body {
@@ -24,3 +32,39 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+.range-slider .range-slider__range {
+  background: #BD9882 !important;
+  transition: height .3s;
+}
+
+.range-slider .range-slider__thumb {
+  background: #BD9882 !important;
+  transition: transform .3s;
+}
+
+.swiper-button-next:after, .swiper-rtl .swiper-button-prev:after {
+  color: var(--color-primary);
+}
+
+.swiper-button-prev:after, .swiper-rtl .swiper-button-prev:after {
+  color: var(--color-primary);
+}
+.swiper-pagination-bullet-active {
+  background-color: var(--color-primary) !important;
+}
+
+/* Layout thumbnail hover effect */
+.layout-thumbnail {
+  transition: transform 0.25s cubic-bezier(0.4,0.2,0.2,1), box-shadow 0.25s, background 0.25s;
+  background: transparent;
+}
+.layout-thumbnail:hover,
+.group:hover .layout-thumbnail {
+  transform: scale(1.2);
+  /* background: radial-gradient(circle, rgba(27, 25, 24, 0.543) 0%, rgba(27, 25, 24, 0.198) 30%, rgba(27,25,24,0.00) 100%);
+  box-shadow: 0 8px 32px 0 rgba(55,50,46,0.18); */
+}
+
+  
+
