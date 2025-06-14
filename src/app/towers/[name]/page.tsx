@@ -17,6 +17,7 @@ const TowerDetailsPage = () => {
     id: 0,
     name: name,
     height: "",
+    dimensions: "",
     color: "",
     floors: 0,
     apartments: 0,
@@ -29,22 +30,21 @@ const TowerDetailsPage = () => {
       className="container mx-auto p-8"
       style={{ color: "var(--foreground)" }}
     >
-       <div className="w-full max-w-5xl mb-6">
-       
-       <button
-         className="px-3 py-2 rounded-lg cursor-pointer flex items-center gap-2 font-semibold shadow border transition hover:scale-105 hover:shadow-lg"
-         style={{
-           background: "var(--color-primary)",
-           color: "var(--color-secondary)",
-           borderColor: "var(--color-secondary)",
-           borderWidth: "2px",
-         }}
-         onClick={() => back()}
-       >
-         <ChevronLeft/>
-         Back
-       </button>
-   </div>
+      <div className="w-full max-w-5xl mb-6">
+        <button
+          className="px-3 py-2 rounded-lg cursor-pointer flex items-center gap-2 font-semibold shadow border transition hover:scale-105 hover:shadow-lg"
+          style={{
+            background: "var(--color-primary)",
+            color: "var(--color-secondary)",
+            borderColor: "var(--color-secondary)",
+            borderWidth: "2px",
+          }}
+          onClick={() => back()}
+        >
+          <ChevronLeft />
+          Back
+        </button>
+      </div>
       <PageTitle title={tower.name} />
 
       <div className="grid grid-cols-1 gap-8 mt-4">
@@ -72,14 +72,11 @@ const TowerDetailsPage = () => {
               animate={{ opacity: 1, scale: 1 }}
               transition={{ duration: 0.4, delay: index * 0.07 }}
             >
-              {/* Floor number badge */}
               <div className="absolute top-4 right-4 text-xs font-mono text-[var(--color-primary)] opacity-60">
                 #{floor.number}
               </div>
 
-              {/* Main content grid */}
               <div className="grid grid-cols-2 md:grid-cols-4 gap-6 items-center w-full">
-                {/* Floor Number - Large display */}
                 <div className="flex flex-col items-center justify-center md:col-span-1">
                   <div className="flex items-baseline">
                     <span
@@ -97,7 +94,10 @@ const TowerDetailsPage = () => {
                 {/* Apartments */}
                 <div className="flex flex-col items-center justify-center gap-2 md:col-span-1">
                   <div className="flex items-center gap-3">
-                    <Building size={24} className="text-[var(--color-primary)]" />
+                    <Building
+                      size={24}
+                      className="text-[var(--color-primary)]"
+                    />
                     <span
                       className=" md:text-2xl font-semibold"
                       style={{ color: "#fff" }}
@@ -105,9 +105,9 @@ const TowerDetailsPage = () => {
                       {floor.apartments}
                     </span>
                   </div>
-                  {/* <span className="text-sm text-gray-400 font-medium">
+                  <span className="text-sm text-gray-400 font-medium">
                     Apartments
-                  </span> */}
+                  </span>
                 </div>
 
                 {/* Occupancy */}
@@ -121,25 +121,28 @@ const TowerDetailsPage = () => {
                       {floor.occupancy}
                     </span>
                   </div>
-                  {/* <span className="text-sm text-gray-400 font-medium">
+                  <span className="text-sm text-gray-400 font-medium">
                     Occupancy
-                  </span> */}
+                  </span>
                 </div>
 
                 {/* Dimensions */}
                 <div className="flex flex-col items-center justify-center gap-2 md:col-span-1">
                   <div className="flex items-center gap-3">
-                    <PencilRuler size={24} className="text-[var(--color-primary)]" />
+                    <PencilRuler
+                      size={24}
+                      className="text-[var(--color-primary)]"
+                    />
                     <span
                       className=" md:text-2xl font-semibold"
                       style={{ color: "#fff" }}
                     >
-                      {floor.height}
+                      {floor.dimensions}
                     </span>
                   </div>
-                  {/* <span className="text-sm text-gray-400 font-medium">
-                    Height
-                  </span> */}
+                  <span className="text-sm text-gray-400 font-medium">
+                    Dimension
+                  </span>
                 </div>
               </div>
 

@@ -27,7 +27,6 @@ export default function TowersPage() {
         <Towers />
       </div>
 
-      {/* Fun Highlight Section */}
       <div className="bg-white/5 relative backdrop-blur-sm mt-40 rounded-xl p-6 border border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 shadow-lg">
         <motion.div
           initial={{ opacity: 0 }}
@@ -51,7 +50,6 @@ export default function TowersPage() {
           className="rounded-xl md:absolute bottom-0 right-10 overflow-hidden shadow-md"
         >
         
-            {/* <Building2 className="w-100  h-40 object-cover " /> */}
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="250"

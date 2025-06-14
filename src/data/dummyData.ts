@@ -4,6 +4,7 @@ export interface Tower {
   id: number;
   name: string;
   height: string;
+  dimensions: string;
   color: string;
   floors: number;
   apartments: number;
@@ -15,6 +16,7 @@ export const towersData: Tower[] = [
     id: 1,
     name: "Apex Tower",
     height: "16rem",
+    dimensions: "120sqm",
     color: "var(--color-primary)",
     floors: 10,
     apartments: 128,
@@ -24,6 +26,7 @@ export const towersData: Tower[] = [
     id: 2,
     name: "Elusian Tower",
     height: "20rem",
+    dimensions: "120sqm",
     color: "var(--foreground)",
     floors: 14,
     apartments: 160,
@@ -33,6 +36,7 @@ export const towersData: Tower[] = [
     id: 3,
     name: "Loquac Tower",
     height: "16rem",
+    dimensions: "120sqm",
     color: "var(--color-primary)",
     floors: 12,
     apartments: 128,
@@ -46,6 +50,7 @@ export interface Floor {
   apartments: number;
   occupancy: string;
   height: string;
+  dimensions: string
 }
 
 export function getFloorsForTower(towerId: number): Floor[] {
@@ -54,6 +59,7 @@ export function getFloorsForTower(towerId: number): Floor[] {
   return Array.from({ length: floorCount }, (_, i) => ({
     id: `floor-${i + 1}`,
     number: i + 1,
+    dimensions: '120sqm',
     apartments: 4, // consistent across all floors for demo
     occupancy: `${90 - i}%`, // decreasing occupancy for demo
     height: "16rem", // consistent height for demo
